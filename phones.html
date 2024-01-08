@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phones by api</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind elements -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+</head>
+<body>
+    <main class="mx-[10%]">
+        <!-- search -->
+        <div class="form-control py-5">
+            <div class="input-group">
+                <input id="search-field" type="text" placeholder="Search…" class="input input-bordered" />
+                <button onclick="searchPhoneByBrand()" class="btn btn-square">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                </button>
+            </div>
+            <!-- result count text -->
+            <p id="result-count-text" class="text-white mt-2"></p>
+        </div>
+
+
+        <!-- phones -->
+        <section id="phones-container" class="grid md:grid-cols-3 grid-cols-1 gap-10">
+            <!-- html from js -->
+        </section>
+
+        <!-- show all -->
+        <button onclick="showAll()" id="show-all-button" class="btn flex w-[200px] mx-auto hidden">Show all</button>
+        <!-- not found text -->
+        <section class="mt-[20%]"><h1 id="not-found-text" class="hidden text-red-500 text-xl text-center">Not Found, try again with new keyword.</h1></section>
+        <!-- loader -->
+        <div id="loader" class="hidden flex justify-center items-center">
+            <!-- loader from tailwind elements -->
+            <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-secondary motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status"></div>
+        </div>
+        <!-- modal -->
+        <section id="modal-container">
+            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+            <div class="modal"> 
+                <div class="modal-box w-6/12 max-w-5xl">
+                    <!-- body open -->
+                    <div class="flex justify-around">
+                        <!-- image -->
+                        <div>
+                            <img class="w-[200px] mb-5" id="phone-thumb" src="" alt="">
+                            <h1 class="text-white text-3xl text-left" id="phone-name"></h1>
+                            <h3 class="text-white text-xl text-left" id="phone-brand"></h3>
+                            <p class="text-white text-md text-left" id="phone-release"></p>
+                        </div>
+                        <!-- features -->
+                        <div id="phone-features">
+                            <!-- code from js carrete -->
+                        </div>
+                    </div>
+                    <!-- body closed -->
+                    <div class="modal-action">
+                        <label for="my-modal-5" class="btn">Add to cart</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/phones.js"></script>
+</body>
+</html>
